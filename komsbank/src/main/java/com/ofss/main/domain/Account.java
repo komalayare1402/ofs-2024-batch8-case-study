@@ -1,15 +1,48 @@
 package com.ofss.main.domain;
 import java.util.*;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+
+
+@Entity
+@Table(name="Account")
 public class Account {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="account_id")
     private int accountId;
+	
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
+    
+	@Column(name="account_type")
     private String accountType;
+	
+	@Column(name="account_rate")
     private double accountRate;
+	
+	@Column(name="account_balance")
     private double accountBalance;
+	
+	@Column(name="account_minimum_balance")
     private double accountMinBalance;
+	
+	@Column(name="account_status")
     private String accountStatus;
-    private int withdrawalLimit;
+	
+	@Column(name="overdraft_amount")
+    private int overdraft_amount;
 
     public Account(int accountId, String accountType, double accountRate, double accountBalance,
             double accountMinBalance, String accountStatus, int overdraft_amount) {
@@ -30,10 +63,12 @@ public class Account {
         this.overdraft_amount = overdraft_amount;
     }
 
-    private int overdraft_amount;
-    private Customer customer;
-    private List<Transaction> txns;
-    private List<Cheque> cheques;
+
+    
+
+    
+//    private List<Transaction> txns;
+//    private List<Cheque> cheques;
 
 
     public int getAccountId() {
@@ -83,15 +118,8 @@ public class Account {
     public void setAccountStatus(String accountStatus) {
         this.accountStatus = accountStatus;
     }
-
-    public int getWithdrawalLimit() {
-        return withdrawalLimit;
-    }
-
-    public void setWithdrawalLimit(int withdrawalLimit) {
-        this.withdrawalLimit = withdrawalLimit;
-    }
-
+    
+    
     public Customer getCustomer() {
         return customer;
     }
@@ -100,21 +128,21 @@ public class Account {
         this.customer = customer;
     }
 
-    public List<Transaction> getTxns() {
-        return txns;
-    }
-
-    public void setTxns(List<Transaction> txns) {
-        this.txns = txns;
-    }
-    
-    public List<Cheque> getCheques() {
-        return cheques;
-    }
-
-    public void setCheques(List<Cheque> cheques) {
-        this.cheques = cheques;
-    }
+//    public List<Transaction> getTxns() {
+//        return txns;
+//    }
+//
+//    public void setTxns(List<Transaction> txns) {
+//        this.txns = txns;
+//    }
+//    
+//    public List<Cheque> getCheques() {
+//        return cheques;
+//    }
+//
+//    public void setCheques(List<Cheque> cheques) {
+//        this.cheques = cheques;
+//    }
 
     public Account(){
 
