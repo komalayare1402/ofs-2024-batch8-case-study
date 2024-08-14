@@ -10,4 +10,6 @@ import com.ofss.main.domain.Account;
 public interface AccountService {
    // public String AccountType(int customerId, String accountType, int overdraft_amount);
 	List<Account> getAllAccounts(int customer_id);
+	
+	public String AccRegister(Account account);
 }

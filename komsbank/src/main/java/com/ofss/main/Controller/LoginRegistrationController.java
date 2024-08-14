@@ -45,5 +45,10 @@ public class LoginRegistrationController {
 	public List<Account> listOfAcc(@PathVariable int id) {
 		return accountService.getAllAccounts(id);
 	}
+	
+	@PostMapping("AccountCreation")
+	public String accCreation(@RequestBody Account account) {
+		return accountService.AccRegister(account);
+	}
 
 }
