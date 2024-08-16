@@ -1,0 +1,73 @@
+  <!--
+  Copyright (c) 2014, 2024, Oracle and/or its affiliates.
+  Licensed under The Universal Permissive License (UPL), Version 1.0
+  as shown at https://oss.oracle.com/licenses/upl/
+  -->
+  <div class="oj-hybrid-padding">
+    <h3>Registration Form</h3>
+    <oj-c-form-layout
+                    id="formLayoutOptions"
+                    max-columns="2"
+                    direction="row"
+                    user-assistance-density="compact">
+    <div>
+      <b>Enter First Name</b>
+      <oj-c-input-text
+                id="text-input"
+                value="{{firstname}}"
+                label-hint="Enter first name"
+                label-edge="inside">
+      </oj-c-input-text>
+    </div>
+
+    <div>
+      <b>Enter Last Name</b>
+      <oj-c-input-text
+                id="text-input"
+                value="{{lastname}}"
+                label-hint="Enter last name"
+                label-edge="inside">
+      </oj-c-input-text>
+    </div>
+
+    <div>
+      <b>Enter Salary</b>
+      <oj-c-input-number
+                  value="{{salary}}"
+                  label-hint="Enter salary"
+                  min="0"
+                  step="0">
+      </oj-c-input-number>
+    </div>
+
+    <div>
+      <b>Enter Password</b>
+      <oj-c-input-password label-hint="Enter Password"></oj-c-input-password>
+    </div>
+
+    <div>
+      <b>Enter Date</b>
+      <oj-input-date label-hint="Date" autocomplete="off"></oj-input-date>
+    </div>
+
+  </oj-c-form-layout>
+  <oj-messages
+                    class="oj-color-invert"
+                    messages="[[messagesDataprovider]]"
+                    position="{}"
+                    display="notification"
+                    display-options.category="none">
+          </oj-messages>
+
+  <div>
+    <oj-button id="button1" class="oj-sm-margin-4x-top" >Register</oj-button>
+</div>
+
+<div>
+  <oj-progress-bar
+  class="oj-sm-margin-4x-top"
+          id="progressBar"
+          value="[[indeterminate().length > 0 ? -1 : progressValue]]"></oj-progress-bar>
+</div>
+
+  </div>
