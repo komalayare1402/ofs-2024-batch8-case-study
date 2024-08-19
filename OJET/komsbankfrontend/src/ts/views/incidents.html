@@ -1,0 +1,82 @@
+<div class="oj-hybrid-padding" style="text-align: center">
+  <h1>WELCOME TO KOMS BANK</h1>
+  <div>
+    <h5>REGISTER</h5>
+    <div style="padding-inline: 300px">
+      <oj-c-form-layout
+        id="formLayoutOptions"
+        max-columns="2"
+        direction="column"
+        user-assistance-density="compact"
+      >
+
+        <oj-c-input-text
+          id="name-input"
+          value="{{name}}"
+          label-hint="Enter Name  "
+          label-edge="inside"
+        ></oj-c-input-text>
+
+        <oj-c-input-text
+          id="email-input"
+          value="{{email}}"
+          label-hint="Enter Email "
+          label-edge="inside"
+        ></oj-c-input-text>
+
+        <oj-c-input-number
+        id="mobile-input"
+          value="{{mobileno}}"
+          label-hint="Enter mobile no"
+          min="0"
+          step="0"
+        ></oj-c-input-number>
+
+        <oj-c-input-text
+          id="address-input"
+          value="{{address}}"
+          label-hint="Enter Address "
+          label-edge="inside"
+        ></oj-c-input-text>
+
+        <oj-c-input-text
+          id="state-input"
+          value="{{state}}"
+          label-hint="Enter State "
+          label-edge="inside"
+        ></oj-c-input-text>
+
+        <oj-c-input-text
+          id="country-input"
+          value="{{country}}"
+          label-hint="Enter Country "
+          label-edge="inside"
+        ></oj-c-input-text>
+
+        <oj-c-input-text
+          id="username-input"
+          value="{{username}}"
+          label-hint="Enter Login Id "
+          label-edge="inside"
+        ></oj-c-input-text>
+
+        <oj-c-input-password
+        id="password-input"
+          value="{{password}}"
+          label-hint="Enter password"
+          label-hint="password"
+        ></oj-c-input-password>
+        
+        <oj-c-button
+          id="button1"
+          on-oj-action="[[register]]"
+          label="Submit"
+        ></oj-c-button>
+        <p>
+          Already have an account?
+          <a href="../views/dashboard.html">login here</a>
+        </p>
+      </oj-c-form-layout>
+    </div>
+  </div>
+</div>

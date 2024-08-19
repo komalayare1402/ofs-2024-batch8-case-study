@@ -16,9 +16,9 @@ public class Transaction {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "transaction_id")
     private int id;
-	
-    private Account from_account;
-    private Account to_account;
+//	
+//    private Account from_account;
+//    private Account to_account;
     
     @Column(name = "transaction_amount")
     private double amount;
@@ -49,8 +49,8 @@ public class Transaction {
 			LocalDate created_at, LocalDate completed_at, String transfer_type, String transaction_type) {
 		super();
 		this.id = id;
-		this.from_account = from_account;
-		this.to_account = to_account;
+		//this.from_account = from_account;
+		//this.to_account = to_account;
 		this.amount = amount;
 		this.status = status;
 		this.remarks = remarks;
@@ -62,18 +62,18 @@ public class Transaction {
 
 
 
-	public Account getFrom_account() {
-        return from_account;
-    }
-    public void setFrom_account(Account from_account) {
-        this.from_account = from_account;
-    }
-    public Account getTo_account() {
-        return to_account;
-    }
-    public void setTo_account(Account to_account) {
-        this.to_account = to_account;
-    }
+//	public Account getFrom_account() {
+//        return from_account;
+//    }
+//    public void setFrom_account(Account from_account) {
+//        this.from_account = from_account;
+//    }
+//    public Account getTo_account() {
+//        return to_account;
+//    }
+//    public void setTo_account(Account to_account) {
+//        this.to_account = to_account;
+//    }
 
     public int getId() {
         return id;
